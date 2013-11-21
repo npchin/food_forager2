@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Food details</h1>
+</div>
+
+<p><%= link_to 'Add a New Food Detail', new_food_detail_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Dietary restrictions</th>
+      <th>Quantity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_details.each do |food_detail| %>
+      <tr>
+        <td><%= food_detail.event_id %></td>
+        <td><%= food_detail.dietary_restrictions_id %></td>
+        <td><%= food_detail.quantity %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, food_detail_url(food_detail), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_food_detail_url(food_detail), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, food_detail_url(food_detail), method: 'delete', data: { confirm: "Do you really want to delete this food_detail?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

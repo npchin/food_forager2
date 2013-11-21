@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Editing Food Detail #<%= @food_detail.id %></h1>
+</div>
+
+<%= form_tag(food_detail_url(@food_detail), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :event_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :event_id, @food_detail.event_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :dietary_restrictions_id, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= number_field_tag :dietary_restrictions_id, @food_detail.dietary_restrictions_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :quantity, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :quantity, @food_detail.quantity, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Food Detail", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
