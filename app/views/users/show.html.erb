@@ -21,4 +21,8 @@
   <dt>Sms notification</dt>
   <dd><%= @user.sms_notification? %></dd>
 
+  <dt>Events Posted</dt>
+   <% @events.each do |event| %>
+    <dd><%= event.location %> <%= event.cuisine %> <%= event.event_date %></dd>
+  <% end %>
 </dl>
