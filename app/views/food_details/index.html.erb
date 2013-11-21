@@ -18,9 +18,11 @@
 
   <tbody>
     <% @food_details.each do |food_detail| %>
+      <% event = Event.find_by(:id => food_detail.event_id) %>
+      <% dietary_restrictions = DietaryRestriction.find_by(:id => food_detail.dietary_restrictions_id) %>
       <tr>
-        <td><%= food_detail.event_id %></td>
-        <td><%= food_detail.dietary_restrictions_id %></td>
+        <td><%= event.cuisine %> <%= event.location %> <%= event.event_date %></td>
+        <td><%= dietary_restrictions.dietary_notes %></td>
         <td><%= food_detail.quantity %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, food_detail_url(food_detail), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_food_detail_url(food_detail), class: 'btn btn-warning' %></td>

@@ -6,7 +6,12 @@
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :user_id, nil, class: 'form-control' %>
+    
+<%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :email_address, nil), class: 'form-control' %>
+
+    <!--  <%= number_field_tag :user_id, nil, class: 'form-control' %> -->
+    
+
     </div>
   </div>
 
