@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= label_tag :event_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-     <%= select_tag :event_id, options_from_collection_for_select(Event.all, :id, :cuisine, @food_detail.event_id), class: 'form-control' %>
+     <%= select_tag :event_id, options_from_collection_for_select(Event.all, :id, :full_event, @food_detail.event_id), class: 'form-control' %>
     </div>
   </div>
 

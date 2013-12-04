@@ -11,32 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121065026) do
+ActiveRecord::Schema.define(version: 20131203235752) do
 
   create_table "dietary_restrictions", force: true do |t|
-    t.string "dietary_notes"
+    t.string   "dietary_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: true do |t|
     t.integer  "user_id"
     t.string   "cuisine"
     t.string   "location"
-    t.datetime "event_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "event_photo"
   end
 
   create_table "food_details", force: true do |t|
-    t.integer "event_id"
-    t.integer "dietary_restrictions_id"
-    t.string  "quantity"
+    t.integer  "event_id"
+    t.integer  "dietary_restriction_id"
+    t.string   "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "email_address"
-    t.string  "phone"
-    t.boolean "email_notification"
-    t.boolean "sms_notification"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email_address"
+    t.string   "phone"
+    t.boolean  "email_notification"
+    t.boolean  "sms_notification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

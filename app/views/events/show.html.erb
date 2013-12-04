@@ -12,7 +12,16 @@
   <dt>Location</dt>
   <dd><%= @event.location %></dd>
 
-  <dt>Event date</dt>
-  <dd><%= @event.event_date %></dd>
+  <dt>Last Updated</dt>
+  <dd><%= time_ago_in_words @event.updated_at %></dd>
 
+  <dt>Food Details Posted</dt>
+   <% @food_details.each do |detail| %>
+   <% dietary_restriction = DietaryRestriction.find_by(:id => detail.dietary_restrictions_id) %>
+    <dd><%= dietary_restriction.dietary_notes %> <%= detail.quantity %></dd>
+  <% end %>
+
+  <%= image_tag @event.event_photo, width: 400 %>
 </dl>
+
+<%= FoodDetail.where(:event_id => @event.id).inspect %>

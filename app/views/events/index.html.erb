@@ -10,7 +10,7 @@
       <th>User</th>
       <th>Cuisine</th>
       <th>Location</th>
-      <th>Event date</th>
+      <th>Last Updated</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,7 +24,7 @@
         <td><%= user.first_name %> <%= user.last_name %></td>
         <td><%= event.cuisine %></td>
         <td><%= event.location %></td>
-        <td><%= event.event_date %></td>
+        <td><%= time_ago_in_words event.updated_at %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, event_url(event), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_event_url(event), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, event_url(event), method: 'delete', data: { confirm: "Do you really want to delete this event?" }, class: 'btn btn-danger' %></td>

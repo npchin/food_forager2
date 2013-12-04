@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :user_id
       t.string :cuisine
       t.string :location
-      t.datetime :event_date
+      t.timestamps
     end
   end
 end

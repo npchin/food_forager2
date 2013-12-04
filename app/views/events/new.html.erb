@@ -2,12 +2,12 @@
   <h1>New Event</h1>
 </div>
 
-<%= form_tag(events_url, method: 'post', class: 'form-horizontal') do %>
+<%= form_tag(events_url, method: 'post', class: 'form-horizontal', :multipart => true) do %>
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
     
-<%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :email_address, nil), class: 'form-control' %>
+<%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :full_name, nil), class: 'form-control' %>
 
     <!--  <%= number_field_tag :user_id, nil, class: 'form-control' %> -->
     
@@ -29,12 +29,12 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <%= label_tag :event_date, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :event_date, nil, class: 'form-control' %>
-    </div>
-  </div>
+  <p>
+    <label>Event Photo</label>
+    <%= file_field_tag :event_photo %>
+  </p>
+
+
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">

@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :email_address, @event.user_id), class: 'form-control' %>
+      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :full_name, @event.user_id), class: 'form-control' %>
 
     </div>
   </div>
@@ -25,12 +25,6 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <%= label_tag :event_date, nil, class: 'col-md-2 control-label' %>
-    <div class="col-md-6">
-      <%= text_field_tag :event_date, @event.event_date, class: 'form-control' %>
-    </div>
-  </div>
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">

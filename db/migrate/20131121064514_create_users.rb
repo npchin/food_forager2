@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone
       t.boolean :email_notification
       t.boolean :sms_notification
+      t.timestamps
     end
   end
 end
