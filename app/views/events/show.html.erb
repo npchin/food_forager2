@@ -23,11 +23,11 @@
  <dt>Food Details </dt>
    <% @food_details.each do |detail| %>
    <% dietary_restriction = DietaryRestriction.find_by(:id => detail.dietary_restriction_id) %>
-    <dd><%= dietary_restriction.dietary_notes %> <%= detail.quantity %> <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_food_detail_url(detail), class: 'btn btn-warning' %><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, food_detail_url(detail), method: 'delete', data: { confirm: "Do you really want to delete this food_detail?" }, class: 'btn btn-danger' %></dd>
+    <dd><%= dietary_restriction.dietary_notes %> <%= detail.quantity %> <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_food_detail_url(detail), class: 'btn btn-warning' %><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, food_detail_url(detail), method: 'delete', data: { confirm: "Do you really want to delete this food_detail?" }, class: 'btn btn-danger' %>
     <% if detail.food_detail_photo.present? %>
-    <dd><%= image_tag detail.food_detail_photo, height: 400 %></dd>
+    <%= image_tag detail.food_detail_photo, height: 400 %>
     <% else %>
-    <% end %>
+    <% end %></dd>
   <% end %>
 
 <dd><%= link_to 'Add a New Food Detail', new_food_detail_url(:event_id => @event.id) , class: 'btn btn-primary' %></dd>
