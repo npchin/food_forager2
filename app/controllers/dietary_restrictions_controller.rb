@@ -9,6 +9,7 @@ class DietaryRestrictionsController < ApplicationController
   end
 
   def new
+    @dietary_restriction = DietaryRestriction.new
   end
 
   def create
