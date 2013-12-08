@@ -1,5 +1,8 @@
 class Event < ActiveRecord::Base
+	belongs_to :user
 	has_many :food_details
+	has_many :dietary_restrictions, :through => :food_details
+
 
 	validates :location, :presence => true
 
