@@ -23,6 +23,6 @@
 
   <dt>Events Posted</dt>
    <% @events.each do |event| %>
-    <dd><%= event.location %> <%= event.cuisine %> <%= event.last_updated %></dd>
+    <dd><%= event.location %> <%= event.cuisine %> Last Updated  <%= time_ago_in_words event.last_updated %> ago</dd>
   <% end %>
 </dl>

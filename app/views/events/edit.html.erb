@@ -2,10 +2,11 @@
   <h1>Editing Event #<%= @event.id %></h1>
 </div>
 
-<%= form_tag(event_url(@event), method: 'patch', class: 'form-horizontal') do %>
+<%= form_tag(event_url(@event), method: 'patch', class: 'form-horizontal', :multipart => true) do %>
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
+      
       <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :full_name, @event.user_id), class: 'form-control' %>
 
     </div>
@@ -24,6 +25,11 @@
       <%= text_field_tag :location, @event.location, class: 'form-control' %>
     </div>
   </div>
+
+  <p>
+    <label>Event Photo</label>
+    <%= file_field_tag :event_photo %>
+  </p>
 
 
   <div class="form-group">

@@ -15,13 +15,15 @@
   <dt>Last Updated</dt>
   <dd><%= time_ago_in_words @event.updated_at %></dd>
 
-  <dt>Food Details Posted</dt>
+  <dt>Event Photo</dt>
+  <dd><%= image_tag @event.event_photo, width: 400 %></dd>
+  
+ <dt>Food Details </dt>
    <% @food_details.each do |detail| %>
-   <% dietary_restriction = DietaryRestriction.find_by(:id => detail.dietary_restrictions_id) %>
+   <% dietary_restriction = DietaryRestriction.find_by(:id => detail.dietary_restriction_id) %>
     <dd><%= dietary_restriction.dietary_notes %> <%= detail.quantity %></dd>
   <% end %>
-
-  <%= image_tag @event.event_photo, width: 400 %>
 </dl>
+
 
 <%= FoodDetail.where(:event_id => @event.id).inspect %>

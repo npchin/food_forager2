@@ -12,9 +12,9 @@
   </div>
 
   <div class="form-group">
-    <%= label_tag :dietary_restrictions_id, nil, class: 'col-md-2 control-label' %>
+    <%= label_tag :dietary_restriction_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= select_tag :dietary_restrictions_id, options_from_collection_for_select(DietaryRestriction.all, :id, :dietary_notes), class: 'form-control' %>
+      <%= select_tag :dietary_restriction_id, options_from_collection_for_select(DietaryRestriction.all, :id, :dietary_notes), class: 'form-control' %>
     </div>
   </div>
 

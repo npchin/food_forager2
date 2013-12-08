@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th>Event</th>
+      <th>Event Last Updated </th>
       <th>Dietary restrictions</th>
       <th>Quantity</th>
       <th></th>
@@ -21,7 +22,8 @@
       <% event = Event.find_by(:id => food_detail.event_id) %>
       <% dietary_restriction = DietaryRestriction.find_by(:id => food_detail.dietary_restriction_id) %>
       <tr>
-        <td><%= event.cuisine %> <%= event.location %> <%= event.last_updated %></td>
+        <td><%= event.cuisine %> <%= event.location %> </td>
+        <td><%= time_ago_in_words event.last_updated %></td>
         <% if dietary_restriction.present? %>
           <td><%= dietary_restriction.dietary_notes %></td>
         <% else %>

@@ -14,7 +14,7 @@ class FoodDetailsController < ApplicationController
   def create
     @food_detail = FoodDetail.new
     @food_detail.event_id = params[:event_id]
-    @food_detail.dietary_restrictions_id = params[:dietary_restrictions_id]
+    @food_detail.dietary_restriction_id = params[:dietary_restriction_id]
     @food_detail.quantity = params[:quantity]
 
     if @food_detail.save
@@ -31,7 +31,7 @@ class FoodDetailsController < ApplicationController
   def update
     @food_detail = FoodDetail.find_by(id: params[:id])
     @food_detail.event_id = params[:event_id]
-    @food_detail.dietary_restrictions_id = params[:dietary_restrictions_id]
+    @food_detail.dietary_restriction_id = params[:dietary_restriction_id]
     @food_detail.quantity = params[:quantity]
 
     if @food_detail.save
