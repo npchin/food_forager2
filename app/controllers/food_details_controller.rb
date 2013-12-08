@@ -16,6 +16,7 @@ class FoodDetailsController < ApplicationController
     @food_detail.event_id = params[:event_id]
     @food_detail.dietary_restriction_id = params[:dietary_restriction_id]
     @food_detail.quantity = params[:quantity]
+    @food_detail.food_detail_photo = params[:food_detail_photo]
 
     if @food_detail.save
       redirect_to food_details_url, notice: "Food detail created successfully."
@@ -33,6 +34,7 @@ class FoodDetailsController < ApplicationController
     @food_detail.event_id = params[:event_id]
     @food_detail.dietary_restriction_id = params[:dietary_restriction_id]
     @food_detail.quantity = params[:quantity]
+    @food_detail.food_detail_photo = params[:food_detail_photo]
 
     if @food_detail.save
       redirect_to food_details_url, notice: "Food detail updated successfully."

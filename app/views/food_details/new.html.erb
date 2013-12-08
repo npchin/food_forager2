@@ -2,7 +2,7 @@
   <h1>New Food Detail</h1>
 </div>
 
-<%= form_tag(food_details_url, method: 'post', class: 'form-horizontal') do %>
+<%= form_tag(food_details_url, method: 'post', class: 'form-horizontal', :multipart => true) do %>
   <div class="form-group">
     <%= label_tag :event_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
@@ -24,6 +24,12 @@
       <%= text_field_tag :quantity, nil, class: 'form-control' %>
     </div>
   </div>
+
+  <p>
+    <label>Food Detail Photo</label>
+    <%= file_field_tag :food_detail_photo %>
+  </p>
+
 
   <div class="form-group">
     <div class="col-md-offset-2 col-md-6">

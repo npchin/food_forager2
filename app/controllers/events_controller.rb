@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     @event.user_id = params[:user_id]
     @event.cuisine = params[:cuisine]
     @event.location = params[:location]
+    @event.event_photo = params[:event_photo]
 
 
     if @event.save
