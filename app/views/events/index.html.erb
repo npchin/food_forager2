@@ -18,7 +18,7 @@
   </thead>
 
   <tbody>
-    <% @events.order("cuisine DESC").each do |event| %>
+    <% @events.each do |event| %>
       <tr>
         <% user = User.find_by(:id => event.user_id) %>
         <td><%= user.first_name %> <%= user.last_name %></td>
