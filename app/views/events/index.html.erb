@@ -18,13 +18,13 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.order("cuisine DESC").each do |event| %>
       <tr>
         <% user = User.find_by(:id => event.user_id) %>
         <td><%= user.first_name %> <%= user.last_name %></td>
         <td><%= event.cuisine %></td>
         <td><%= event.location %></td>
-        <td><%= time_ago_in_words event.updated_at %></td>
+        <td><%= time_ago_in_words event.last_updated %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, event_url(event), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_event_url(event), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, event_url(event), method: 'delete', data: { confirm: "Do you really want to delete this event?" }, class: 'btn btn-danger' %></td>
